@@ -1,0 +1,851 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+
+    --black: #0b0b0b;
+    --black-light: #111111;
+    --black-soft: #181818;
+
+    --gold: #c9a227;
+    --gold-light: #e5c76b;
+
+    --white: #ffffff;
+    --off-white: #f5f5f0;
+
+    --gray: #aaaaaa;
+    --border: rgba(201, 162, 39, 0.25);
+
+}
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+.container {
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container {
+    width: min(1200px, 90%);
+    margin: auto;
+
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--gold-light);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-menu a {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--gold-light);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.72),
+            rgba(0,0,0,0.85)
+        ),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2000&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(850px, 90%);
+    margin: auto;
+
+    text-align: center;
+}
+
+.hero-small-title {
+    color: var(--gold-light);
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span,
+h2 span {
+    color: var(--gold-light);
+}
+
+.hero-description {
+    color: #dddddd;
+
+    max-width: 600px;
+    margin: 0 auto 40px;
+
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #080808;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.btn-outline:hover {
+    border-color: var(--gold-light);
+    color: var(--gold-light);
+}
+
+
+/* =========================================
+   HERO SCROLL
+========================================= */
+
+.hero-scroll {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: #999;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 35px;
+
+    background: var(--gold);
+
+    margin: 10px auto 0;
+}
+
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.section-label span {
+    width: 30px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.section-label.center {
+    justify-content: center;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+    background: var(--off-white);
+    color: var(--black);
+}
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 80px;
+}
+
+.intro h2,
+.brand-content h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 5vw, 65px);
+
+    line-height: 1.1;
+
+    margin-bottom: 30px;
+}
+
+.intro-content p,
+.brand-content p {
+    color: #555;
+
+    max-width: 650px;
+
+    margin-bottom: 18px;
+}
+
+.text-link {
+    display: inline-block;
+
+    color: var(--gold);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-top: 20px;
+}
+
+.text-link:hover {
+    color: #8d7015;
+}
+
+
+/* =========================================
+   SERVICES PREVIEW
+========================================= */
+
+.services-preview {
+    background: var(--black-light);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.section-intro {
+    max-width: 430px;
+    color: #999;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/*.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 60px;
+}*/
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5vw, 65px);
+}
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.service-card {
+    padding: 45px 35px;
+
+    background: var(--black-soft);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--gold);
+}
+
+.service-number {
+    color: var(--gold);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+.service-card h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    color: #999;
+
+    margin-bottom: 30px;
+}
+
+.service-card a {
+    color: var(--gold-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   BRAND SECTION
+========================================= */
+
+.brand-section {
+    background: var(--off-white);
+    color: var(--black);
+}
+
+.brand-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.image-placeholder {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #151515,
+            #050505
+        );
+
+    border: 1px solid var(--gold);
+}
+
+.image-placeholder span {
+    font-family: "Playfair Display", serif;
+
+    color: var(--gold-light);
+
+    font-size: 30px;
+
+    letter-spacing: 8px;
+}
+
+.brand-stats {
+    display: flex;
+
+    gap: 50px;
+
+    margin-top: 40px;
+}
+
+.brand-stats div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.brand-stats strong {
+    font-family: "Playfair Display", serif;
+
+    color: var(--gold);
+
+    font-size: 30px;
+}
+
+.brand-stats span {
+    color: #555;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   PAGE HERO
+========================================= */
+
+.page-hero {
+    padding: 190px 0 100px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.9),
+            rgba(0,0,0,0.95)
+        );
+}
+
+.page-hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+}
+
+.page-hero h1 span {
+    color: var(--gold-light);
+}
+
+.page-hero p {
+    color: #999;
+
+    max-width: 600px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   ALL SERVICES
+========================================= */
+
+.all-services {
+    background: var(--off-white);
+    color: var(--black);
+}
+
+.large-service-card {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 60px;
+
+    padding: 60px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.service-card-number {
+    font-family: "Playfair Display", serif;
+
+    color: var(--gold);
+
+    font-size: 40px;
+}
+
+.large-service-card h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.large-service-card p {
+    color: #666;
+
+    max-width: 700px;
+
+    margin-bottom: 25px;
+}
+
+.large-service-card ul {
+    list-style: none;
+}
+
+.large-service-card li {
+    margin-bottom: 10px;
+
+    color: #444;
+}
+
+.large-service-card li::before {
+    content: "—";
+
+    color: var(--gold);
+
+    margin-right: 10px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+    background: #080808;
+
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 800px;
+}
+
+.contact-content h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.contact-content p {
+    color: #999;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #050505;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-content {
+    padding: 50px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-brand p {
+    color: #777;
+
+    margin-top: 10px;
+
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 30px;
+}
+
+.footer-links a {
+    color: #999;
+
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .nav-menu {
+        position: absolute;
+
+        top: 90px;
+        left: 0;
+
+        width: 100%;
+
+        background: #0b0b0b;
+
+        flex-direction: column;
+
+        padding: 30px;
+
+        gap: 25px;
+
+        display: none;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .intro-grid,
+    .brand-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .large-service-card {
+        grid-template-columns: 100px 1fr;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .nav-container {
+        height: 75px;
+    }
+
+    .nav-menu {
+        top: 75px;
+    }
+
+    .logo {
+        font-size: 21px;
+        letter-spacing: 3px;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-stats {
+        gap: 25px;
+    }
+
+    .large-service-card {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 45px 0;
+    }
+
+    .large-service-card h2 {
+        font-size: 35px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+}
