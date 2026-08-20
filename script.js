@@ -111,3 +111,35 @@ if (philosophySection) {
     philosophyObserver.observe(philosophySection);
 
 }
+
+// =========================================
+// INTRO SCROLL ANIMATION
+// =========================================
+
+const introAnimation = document.querySelector(".intro-animation");
+
+if (introAnimation) {
+
+    const introObserver = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    introAnimation.classList.add("intro-visible");
+
+                    introObserver.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.2
+        }
+    );
+
+    introObserver.observe(introAnimation);
+}

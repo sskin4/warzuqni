@@ -1140,6 +1140,22 @@ h2 span {
     transform: translateX(0);
 }
 
+/* =========================================
+   INTRO SCROLL ANIMATION
+========================================= */
+
+.intro-animation {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.intro-animation.intro-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
 
 /* =========================================
    VIDEO SHOWCASE
