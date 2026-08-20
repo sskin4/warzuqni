@@ -78,3 +78,36 @@ window.addEventListener("scroll", () => {
     });
 
 });
+
+/* =========================================
+   PHILOSOPHY SCROLL ANIMATION
+========================================= */
+
+const philosophySection = document.querySelector(".philosophy-animation");
+
+if (philosophySection) {
+
+    const philosophyObserver = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    philosophySection.classList.add("philosophy-visible");
+
+                    philosophyObserver.unobserve(philosophySection);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.25
+        }
+    );
+
+    philosophyObserver.observe(philosophySection);
+
+}
